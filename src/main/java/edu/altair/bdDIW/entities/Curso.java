@@ -1,5 +1,7 @@
 package edu.altair.bdDIW.entities;
 import jakarta.persistence.*;
+
+import java.util.List;
 import java.util.Objects;
 
 @Entity @Table( name = "cursos",
@@ -16,12 +18,12 @@ public class Curso {
     private Long idCurso;
 
    //ATRIBUTOS PROPIOS
-    @Column(name = "diminutivo", nullable = false,lenght=20)
+    @Column(name = "diminutivo", nullable = false, length = 15)
     private String diminutivo;
-    @Column(name="descripcion", lenght = 255)
+    @Column(name="descripcion",length = 250)
     private String descripcion;
     
-    
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "curso")private List<Modulo_Curso> moduloCursos;
     
     //RELACION N:1 Varios cursos pertenecen a una titulacion
     @ManyToOne(fetch = FetchType.LAZY)

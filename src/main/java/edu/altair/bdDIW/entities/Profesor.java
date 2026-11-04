@@ -1,6 +1,8 @@
 package edu.altair.bdDIW.entities;
 
 import jakarta.persistence.*;
+
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -41,6 +43,7 @@ public class Profesor {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_departamento",nullable = false)
     private Departamento departamento;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "profesor")private List<Profesor_Modulo> profesorModulos;
 
 //CONSTRUCTOR VACIO
     public Profesor(){
@@ -115,6 +118,14 @@ public class Profesor {
 
     public void setDepartamento(Departamento departamento) {
         this.departamento = departamento;
+    }
+
+    public List<Profesor_Modulo> getProfesorModulos() {
+        return profesorModulos;
+    }
+
+    public void setProfesorModulos(List<Profesor_Modulo> profesorModulos) {
+        this.profesorModulos = profesorModulos;
     }
     //EQUALS Y HASHCODE
 
