@@ -24,7 +24,7 @@ public class Titulacion {
 
         //ATRIBUTOS
         @Column(name = "codigo", nullable = false,length = 30)
-        private int codigo;
+        private String codigo;
 
         @Column(name = "diminutivo", nullable = false, length = 10)
         private String diminutivo;
@@ -47,7 +47,7 @@ public class Titulacion {
 
         //CONSTRUCTOR COMPLETO
 
-        public Titulacion(Long id_titulacion, int codigo, String diminutivo, int horas_totales) {
+        public Titulacion(Long id_titulacion, String codigo, String diminutivo, int horas_totales) {
                 this.id_titulacion = id_titulacion;
                 this.codigo = codigo;
                 this.diminutivo = diminutivo;
@@ -65,11 +65,11 @@ public class Titulacion {
                 this.id_titulacion = id_titulacion;
         }
 
-        public int getCodigo() {
+        public String getCodigo() {
                 return codigo;
         }
 
-        public void setCodigo(int codigo) {
+        public void setCodigo(String codigo) {
                 this.codigo = codigo;
         }
 

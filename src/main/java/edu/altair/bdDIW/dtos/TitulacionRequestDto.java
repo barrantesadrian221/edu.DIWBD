@@ -1,6 +1,6 @@
 package edu.altair.bdDIW.dtos;
 
-public record TitulacionRequestDto(int codigo,
+public record TitulacionRequestDto(String codigo,
                                    String diminutivo,
                                    int horas_totales) {
 }
